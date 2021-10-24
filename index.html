@@ -6,32 +6,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snap Effect</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./scss/style.css">
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <section class="one">
-      <h1>
-        First Page
-      </h1>
-    </section>
-    <section class="two">
-      <h1>
-        Second Page
-      </h1>
-    </section>
-    <section class="three">
-      <h1>
-        Third Page
-      </h1>
-    </section>
-    <section class="four">
-      <h1>
-        Lanndddd
-      </h1>
-    </section>
+  <div class="scroll-container">
+    <div class="scroll-area bg-1" id="divone">DIV 1</div>
+    <div class="scroll-area bg-2" id="divtwo">DIV 2</div>
+    <div class="scroll-area bg-3" id="divthree">DIV 3</div>
+    <div class="scroll-area bg-4" id="divfour">DIV 4</div>
   </div>
+
+  <div class="container">
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="#divone">Home</a></li>
+        <li><a href="#divtwo">About</a></li>
+        <li><a href="#divthree">Services</a></li>
+        <li><a href="#divfour">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script src="scripts.js" />
 </body>
 
 </html>
