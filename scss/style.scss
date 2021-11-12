@@ -1,151 +1,82 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  padding: 0;
   margin: 0;
+}
+
+aside ul li .indicator {
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+aside ul li .active {
+  transform: scale(1.7);
+  transition: transform 200ms ease-in-out;
+}
+
+aside {
+  position: fixed;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+  }
+  .up {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    cursor: pointer;
+  }
+
+  .down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+    cursor: pointer;
+  }
+}
+
+section {
+  min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-nav {
-  width: 120px;
-  line-height: 80px;
-  height: 100vh;
-}
-nav a {
-  text-decoration: none;
-  color: #212121;
-  padding: 30px 25px;
-}
-
-.scroll-container,
-.scroll-area {
-  width: 100%;
-  height: 100vh;
-  font-size: 2em;
-  scroll-behavior: smooth;
-}
-
-.scroll-container {
-  overflow: auto;
-  scroll-snap-type: y mandatory;
-}
-
-.scroll-area {
   scroll-snap-align: start;
 }
 
-.scroll-container,
-.scroll-area {
-  margin: 0 auto;
+section:nth-child(odd) {
+  background-color: #ffcc33;
 }
 
-.scroll-area {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+section:nth-child(even) {
+  background-color: #ffb347;
+}
+
+section h1 {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 4rem;
   color: white;
 }
 
-.bg-1 {
-  background: #a52a2a;
-}
-
-.bg-2 {
-  background: #7ede28;
-}
-
-.bg-3 {
-  background: #ffc125;
-}
-
-.bg-4 {
-  background: #0bb5ff;
-}
-
-/*
-* Font Face: Lato
-*/
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Lato Hairline'), local('Lato-Hairline'),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
-}
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Lato Light'), local('Lato-Light'),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Lato Regular'), local('Lato-Regular'),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'),
-    url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
-}
-
-// trail 3
-
-#dot-nav {
-  right: 10px;
-  top: 50%;
-  margin-top: -50px;
-  height: 100px;
-  z-index: 999;
-}
-
-#dot-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#dot-nav li {
-  position: relative;
-  background-color: #bdc3c7;
-  border: 3px solid #bdc3c7;
-  border-radius: 15px 15px 15px 15px;
-  cursor: pointer;
-  padding: 5px;
-  height: 10px;
-  margin: 10px 10px 0px 0px;
-  width: 10px;
-  vertical-align: bottom;
-}
-#dot-nav li.active,
-#dot-nav li:hover {
-  background-color: #8e44ad;
-}
-
-#dot-nav a {
-  outline: 0;
-  vertical-align: top;
-  margin: 0px 0px 0px 25px;
-  position: relative;
-  top: -5px;
-}
-.awesome-tooltip + .tooltip > .tooltip-inner {
-  /*background-color: #8e44ad;*/
-  color: #f5f5f5;
-  border: 1px solid #8e44ad;
-}
-.awesome-tooltip + .tooltip.left > .tooltip-arrow {
-  top: 50%;
-  right: 0;
-  margin-top: -5px;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid #8e44ad;
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }
